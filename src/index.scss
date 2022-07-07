@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-900 font-body px-5;
+    @apply bg-slate-900 font-body px-5 text-white;
   }
 }
 
@@ -12,5 +12,25 @@
   .page-container {
     max-width: 1000px;
     @apply mx-auto;
+  }
+
+  .movie-list .swiper-slide {
+    width: 300px;
+    height: auto;
+  }
+  .banner .swiper {
+    height: 100%;
+  }
+}
+
+//pagination
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .selected {
+    @apply text-primary;
   }
 }
