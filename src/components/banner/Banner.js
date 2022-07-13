@@ -1,8 +1,10 @@
 import React from "react";
 import useSWR from "swr";
-import { fetcher } from "../../config";
+import { fetcher, tmdbAPI } from "../../config";
 import { SwiperSlide, Swiper, useSwiper } from "swiper/react";
 import "swiper/css/effect-cards";
+import Button from "../button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
   const { data } = useSWR(
@@ -10,6 +12,7 @@ const Banner = () => {
     fetcher
   );
   const movies = data?.results || [];
+  console.log(movies);
   return (
     <section className="banner h-[400px] page-container mb-10 overflow-hidden">
       <Swiper grabCursor="true" slidesPerView="auto" effect="cards">
@@ -25,6 +28,10 @@ const Banner = () => {
 };
 
 function BannerItem({ item }) {
+  const navigate = useNavigate();
+  const { data } = useSWR(tmdbAPI.getMovieDetails(item.id), fetcher);
+  if (!data) return null;
+  console.log("dsadasd", data.genres);
   return (
     <div className="w-full h-full rounded-lg relative">
       <div className="overlay absolute inset-0 rounded-lg bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0)] "></div>
@@ -35,19 +42,24 @@ function BannerItem({ item }) {
       />
       <div className="absolute bottom-5 left-5 w-full text-white">
         <h2 className="font-bold text-3xl mb-3">{item.title}</h2>
-        <div className="flex items-center gap-x-3 mb-8">
-          <span className="px-4 py-2 border border-white rounded-md">
-            Adventure
-          </span>
-          <span className="px-4 py-2 border border-white rounded-md">
-            Adventure
-          </span>
-          <span className="px-4 py-2 border border-white rounded-md">
-            Adventure
-          </span>
-        </div>
-        <button className="flex justify-center items-center gap-x-2 py-2 px-6 rounded-lg bg-primary text-white font-medium">
-          Watch now
+        {data.genres.length > 0 && (
+          <div className="flex items-center gap-x-3 mb-8">
+            {data.genres.map((item) => (
+              <span
+                key={item.id}
+                className="px-4 py-2 border border-white rounded-md"
+              >
+                {item.name}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <Button
+          onClick={() => navigate(`/movie/${item.id}`)}
+          className="flex justify-center items-center gap-x-2 w-auto px-6"
+        >
+          Watch now{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8"
@@ -60,7 +72,7 @@ function BannerItem({ item }) {
               clipRule="evenodd"
             />
           </svg>
-        </button>
+        </Button>
       </div>
     </div>
   );
