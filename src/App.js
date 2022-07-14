@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "swiper/scss";
 import Banner from "./components/banner/Banner";
 import Main from "./components/layout/Main";
+import NotFound from "./components/layout/NotFound";
 import HomePage from "./pages/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
 import MoviePage from "./pages/MoviePage";
@@ -27,6 +28,7 @@ function App() {
             element={<MovieDetailsPage></MovieDetailsPage>}
           ></Route>
         </Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </Fragment>
   );

@@ -22,7 +22,7 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
-      className={`py-2 px-4 ${bgClassName} rounded-lg capitalize w-full mt-auto hover:bg-opacity-75 ${className}`}
+      className={`py-2 px-4 ${bgClassName} rounded-lg capitalize w-full mt-auto hover:bg-secondary transition-all ${className}`}
     >
       {children}
     </button>
