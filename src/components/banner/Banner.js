@@ -1,12 +1,14 @@
 import React from "react";
 import useSWR from "swr";
 import { fetcher, tmdbAPI } from "../../config";
-import { SwiperSlide, Swiper, useSwiper } from "swiper/react";
+import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css/effect-cards";
 import Button from "../button/Button";
 import { useNavigate } from "react-router-dom";
+import SwiperCore, { Autoplay } from "swiper";
 
 const Banner = () => {
+  SwiperCore.use([Autoplay]);
   const { data } = useSWR(
     `https://api.themoviedb.org/3/movie/upcoming?api_key=e9b1bbeb94141e8c1685e0432bef437b`,
     fetcher
@@ -15,7 +17,12 @@ const Banner = () => {
   console.log(movies);
   return (
     <section className="banner h-[400px] page-container mb-10 overflow-hidden">
-      <Swiper grabCursor="true" slidesPerView="auto" effect="cards">
+      <Swiper
+        grabCursor="true"
+        slidesPerView="auto"
+        effect="cards"
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+      >
         {movies.length > 0 &&
           movies.map((item) => (
             <SwiperSlide key={item.id}>

@@ -3,8 +3,12 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import MovieCard, { MovieCardSkeleton } from "./MovieCard";
 import useSWR from "swr";
 import { withErrorBoundary } from "react-error-boundary";
-
 import { fetcher, tmdbAPI } from "../../config";
+import Button from "../button/Button";
+import { Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+
 const MovieList = ({ type = "now_playing" }) => {
   const { data, error } = useSWR(tmdbAPI.getMovieList(type), fetcher);
   const isLoading = !data && !error;
@@ -13,7 +17,12 @@ const MovieList = ({ type = "now_playing" }) => {
     <div className="movie-list">
       {isLoading && (
         <>
-          <Swiper grabCursor={true} spaceBetween={50} slidesPerView={"auto"}>
+          <Swiper
+            modules={[Navigation]}
+            grabCursor={true}
+            spaceBetween={50}
+            slidesPerView={"auto"}
+          >
             <SwiperSlide>
               <MovieCardSkeleton></MovieCardSkeleton>
             </SwiperSlide>
