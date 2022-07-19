@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route element={<Main></Main>}>
           <Route
-            path="/"
+            path="/hoangloi-movies"
             element={
               <>
                 <Banner></Banner>
