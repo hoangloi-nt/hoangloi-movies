@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import "swiper/scss";
 import Banner from "./components/banner/Banner";
 import Main from "./components/layout/Main";
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route element={<Main></Main>}>
           <Route
-            path="/hoangloi-movies"
+            path="/"
             element={
               <>
                 <Banner></Banner>
