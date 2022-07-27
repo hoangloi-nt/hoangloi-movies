@@ -35,7 +35,7 @@ const MovieDetailsPage = () => {
         {title}
       </h1>
       {genres.length > 0 && (
-        <div className="flex items-center gap-x-5 mb-10 justify-center">
+        <div className="sm:flex items-center sm:gap-x-5 mb-10 justify-center grid grid-cols-2 gap-5">
           {genres.map((item) => (
             <span
               className="py-2 px-4 border-primary text-primary border rounded-md"
@@ -68,7 +68,7 @@ function MovieCredits() {
   return (
     <div className="py-10">
       <h2 className="text-center text-3xl mb-10 font-bold">Casts</h2>
-      <div className="grid grid-cols-4 gap-5 px-10">
+      <div className="grid sm:grid-cols-4 gap-5 sm:px-10 grid-cols-2">
         {cast.slice(0, 4).map((item) => (
           <div className="cast-item" key={item.id}>
             <img
@@ -95,7 +95,7 @@ function MovieVideos() {
   if (!results || results.length <= 0) return null;
   console.log(results);
   return (
-    <div className="p-10">
+    <div className="sm:p-10">
       <div className="flex flex-col gap-10">
         {results
           .filter((item) => item.type === "Trailer")
@@ -113,7 +113,7 @@ function MovieVideos() {
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="w-full h-[650px] object-cover"
+                  className="w-full sm:h-[650px] h-auto object-cover"
                 ></iframe>
               </div>
             </div>

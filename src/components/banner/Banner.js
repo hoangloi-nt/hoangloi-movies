@@ -38,7 +38,6 @@ function BannerItem({ item }) {
   const navigate = useNavigate();
   const { data } = useSWR(tmdbAPI.getMovieDetails(item.id), fetcher);
   if (!data) return null;
-  console.log("dsadasd", data.genres);
   return (
     <div className="w-full h-full rounded-lg relative">
       <div className="overlay absolute inset-0 rounded-lg bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0)] "></div>
@@ -48,9 +47,9 @@ function BannerItem({ item }) {
         className="w-full h-full rounded-lg object-cover"
       />
       <div className="absolute bottom-5 left-5 w-full text-white">
-        <h2 className="font-bold text-3xl mb-3">{item.title}</h2>
+        <h2 className="font-bold sm:text-3xl text-xl mb-3">{item.title}</h2>
         {data.genres.length > 0 && (
-          <div className="flex items-center gap-x-3 mb-8">
+          <div className="flex items-center gap-x-3 mb-8 ">
             {data.genres.map((item) => (
               <span
                 key={item.id}
