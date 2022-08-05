@@ -133,7 +133,7 @@ function MovieSimilar() {
   const { results } = data;
   if (!results || results.length <= 0) return null;
   return (
-    <div className="p-10">
+    <div className="sm:p-10 py-10">
       <h2 className="text-3xl font-medium mb-10">Similar movies</h2>
       <div className="movie-list">
         <Swiper grabCursor={true} spaceBetween={50} slidesPerView={"auto"}>
