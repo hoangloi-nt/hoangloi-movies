@@ -21,7 +21,7 @@ const Banner = () => {
         grabCursor="true"
         slidesPerView="auto"
         effect="cards"
-        // autoplay={{ delay: 5000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
       >
         {movies.length > 0 &&
           movies.map((item) => (
