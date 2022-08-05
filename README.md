@@ -1,7 +1,7 @@
 # Giới thiệu ✨⭐🌟
 
 Trang web hiển thi thông tin các bộ phim dựa trên The MovieData API ("https://developers.themoviedb.org/3/getting-started/introduction") <br>
-Link demo: ("https://hoangloi-nt.github.io/hoangloi-movies/") <br>
+Link demo: ("https://hoangloi-movies.netlify.app/") <br>
 
 # Chức năng 🌈🔥💧
 
