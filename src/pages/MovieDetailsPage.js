@@ -7,7 +7,7 @@ import { fetcher, tmdbAPI } from "../config";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
-  const { data, error } = useSWR(tmdbAPI.getMovieDetails(movieId), fetcher);
+  const { data } = useSWR(tmdbAPI.getMovieDetails(movieId), fetcher);
   console.log(data);
   if (!data) return null;
   const { backdrop_path, poster_path, title, genres, overview } = data;
@@ -58,10 +58,7 @@ const MovieDetailsPage = () => {
 
 function MovieCredits() {
   const { movieId } = useParams();
-  const { data, error } = useSWR(
-    tmdbAPI.getMovieMeta(movieId, "credits"),
-    fetcher
-  );
+  const { data } = useSWR(tmdbAPI.getMovieMeta(movieId, "credits"), fetcher);
   if (!data) return null;
   const { cast } = data;
   if (!cast || cast.length <= 0) return null;
@@ -86,10 +83,7 @@ function MovieCredits() {
 
 function MovieVideos() {
   const { movieId } = useParams();
-  const { data, error } = useSWR(
-    tmdbAPI.getMovieMeta(movieId, "videos"),
-    fetcher
-  );
+  const { data } = useSWR(tmdbAPI.getMovieMeta(movieId, "videos"), fetcher);
   if (!data) return null;
   const { results } = data;
   if (!results || results.length <= 0) return null;
@@ -125,10 +119,7 @@ function MovieVideos() {
 
 function MovieSimilar() {
   const { movieId } = useParams();
-  const { data, error } = useSWR(
-    tmdbAPI.getMovieMeta(movieId, "similar"),
-    fetcher
-  );
+  const { data } = useSWR(tmdbAPI.getMovieMeta(movieId, "similar"), fetcher);
   if (!data) return null;
   const { results } = data;
   if (!results || results.length <= 0) return null;

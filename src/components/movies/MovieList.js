@@ -4,7 +4,6 @@ import MovieCard, { MovieCardSkeleton } from "./MovieCard";
 import useSWR from "swr";
 import { withErrorBoundary } from "react-error-boundary";
 import { fetcher, tmdbAPI } from "../../config";
-import Button from "../button/Button";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
