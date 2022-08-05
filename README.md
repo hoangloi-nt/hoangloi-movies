@@ -1,27 +1,28 @@
 # Giới thiệu ✨⭐🌟
 
-Trang web hien thi thong tin cac bo phim dua tren The MovieData API ("https://developers.themoviedb.org/3/getting-started/introduction")
+Trang web hiển thi thông tin các bộ phim dựa trên The MovieData API ("https://developers.themoviedb.org/3/getting-started/introduction") <br>
+Link demo: ("https://hoangloi-nt.github.io/hoangloi-movies/") <br>
 
 # Chức năng 🌈🔥💧
 
-Hien thi danh muc cac bo phim (hinh anh, ten, danh gia, nam sx)
-Hien thi chi tiet thong tin 1 bo phim (the loai, tom tat, dien vien, trailer)
-De xuat cac bo phim tuong tu
-Tim kiem dua theo ten phim
-Phan trang
+Hiển thi danh mục các bộ phim (hình ảnh, tên, năm sản xuất, đánh giá) <br>
+Hiển thi chi tiết thông tin 1 bộ phim (thể loại, tóm tắt, diễn viên, trailers) <br>
+Đề xuất các bộ phim tương tự <br>
+Chức năng tìm kiếm theo tên phim <br>
+Phân trang <br>
 
 # Công cụ sử dụng 🎊🎉🎆
 
-ReactJS
-TailwindCSS
-react-dom
-react-error-boundary
-react-paginate
-react-router-dom
-react-scripts
-sass
-swiper
-swr
+ReactJS <br>
+TailwindCSS <br>
+react-dom <br>
+react-error-boundary <br>
+react-paginate <br>
+react-router-dom <br>
+react-scripts <br> 
+sass <br>
+swiper <br>
+swr <br>
 uuid
 
 # Hình ảnh minh họa ❤💕💖
